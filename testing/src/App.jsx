@@ -3,14 +3,31 @@ import "./App.css";
 import logo from "../src/assets/hamburger.svg";
 import naruto from "../src/assets/naruto.png";
 
+// Import CSS swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
-// Import CSS swiper
 import "swiper/css";
 import "swiper/css/navigation";
 
+//import react slick
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 function App() {
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 1000,
+    cssEase: "linear",
+    pauseOnHover: true,
+  };
+
   return (
     <>
       <div id="navigation" className="relative">
@@ -33,29 +50,29 @@ function App() {
           </label>
         </div>
 
-        <div className="dua w-1/2 bg-amber-300 h-[65vh] flex flex-col justify-evenly absolute items-center hidden">
+        <div className="dua w-1/2 bg-amber-300 h-[65vh] flex flex-col justify-evenly absolute items-center z-10 hidden">
           <a href="">Home</a>
-          <a href="">Daftar Komik</a>
-          <a href="">Popular</a>
-          <a href="">Project</a>
+          <a href="">Anime List</a>
+          <a href="">Comic</a>
+          <a href="">Jadwal Rilis</a>
           <a href="">Bookmark</a>
           <a href="">History</a>
           <a href="">Login / Register</a>
         </div>
       </div>
 
-      <div id="carousel" className="">
+      <div id="highRate" className="mt-5 z-5">
         <Swiper
           modules={[Navigation]}
           navigation
           spaceBetween={50}
           slidesPerView={1}
-          style={{ '--swiper-navigation-size': '16px' }}
+          style={{ "--swiper-navigation-size": "16px" }}
           onSlideChange={() => console.log("slide changed")}
           onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
-            <img src={naruto} alt=""/>
+            <img src={naruto} alt="" />
           </SwiperSlide>
           <SwiperSlide>
             <img src={naruto} alt="" />
@@ -67,22 +84,51 @@ function App() {
         </Swiper>
       </div>
 
-      <div id="hotAnimeUpdate">
-
+      <div id="rekomendasiDariAdmin" className="relative slider-container mt-5 p-6.5 bg-sky-500/75 z-5 pt-8 pb-8">
+        <h3 className="absolute z-10 top-0 left-2">Rekomendasi</h3>
+        <Slider {...settings} className="z-5">
+          <div>
+            <img src={naruto} alt="" />
+          </div>
+          <div>
+            <img src={naruto} alt="" />
+          </div>
+          <div>
+            <img src={naruto} alt="" />
+          </div>
+          <div>
+            <img src={naruto} alt="" />
+          </div>
+          <div>
+            <img src={naruto} alt="" />
+          </div>
+          <div>
+            <img src={naruto} alt="" />
+          </div>
+          <div>
+            <img src={naruto} alt="" />
+          </div>
+          <div>
+            <img src={naruto} alt="" />
+          </div>
+          <div>
+            <img src={naruto} alt="" />
+          </div>
+        </Slider>
       </div>
 
       <div id="badan">
         <div id="satu">
-          <div id="new_release"></div>
+          <div id="new_update"></div>
         </div>
 
         <div id="dua">
-          <div id="last_watch"></div>
+          <div id="history"></div>
           <div id="chat"></div>
-          <div id="genre"></div>
-          <div id="popular"></div>
         </div>
       </div>
+
+      <div id="movie" className=""></div>
 
       <div id="footer"></div>
     </>
