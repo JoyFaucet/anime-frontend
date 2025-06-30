@@ -9,7 +9,6 @@ import { Navigation, Pagination } from "swiper/modules";
 // Import CSS swiper
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 function App() {
   return (
@@ -47,9 +46,8 @@ function App() {
 
       <div id="carousel" className="">
         <Swiper
-          modules={[Navigation, Pagination]}
+          modules={[Navigation]}
           navigation
-          pagination={{ clickable: true }}
           spaceBetween={50}
           slidesPerView={1}
           style={{ '--swiper-navigation-size': '16px' }}
@@ -69,7 +67,9 @@ function App() {
         </Swiper>
       </div>
 
-      <div id="hotAnimeUpdate"></div>
+      <div id="hotAnimeUpdate">
+
+      </div>
 
       <div id="badan">
         <div id="satu">
