@@ -46,7 +46,7 @@ function App() {
             className="bg-gray-100 w-10 h-5  rounded-full relative cursor-pointer self-center border"
           >
             <input type="checkbox" id="check" className="sr-only peer" />
-            <span className="w-3 h-3 bg-rose-300 absolute rounded-full left-1 top-1/2 -translate-y-1/2  peer-checked:bg-rose-600 peer-checked:left-[13.5px] transition-all duration-500"></span>
+            <span className="w-3 h-3 bg-rose-300 absolute rounded-full left-1 top-1/2 -translate-y-1/2  peer-checked:bg-rose-600 peer-checked:translate-x-2.5 transition-all duration-500"></span>
           </label>
         </div>
 
@@ -84,8 +84,9 @@ function App() {
         </Swiper>
       </div>
 
-      <div id="rekomendasiDariAdmin" className="relative slider-container mt-5 p-6.5 bg-sky-500/75 z-5 pt-8 pb-8">
-        <h3 className="absolute z-10 top-0 left-2">Rekomendasi</h3>
+      <div id="rekomendasiDariAdmin" className="relative slider-container mt-6 p-6.5 z-5 py-9 bg-[#1c1d1f]">
+        <hr className="absolute top-6 left-0 w-full h-px bg-[#ffffff] z-10 border-0" />
+        <h3 className="absolute z-10 top-1 left-4 text-xs text-white font-thin font-mono font-stretch-semi-expanded">Rekomendasi Dari Atmin😤🥵</h3>
         <Slider {...settings} className="z-5">
           <div>
             <img src={naruto} alt="" />
