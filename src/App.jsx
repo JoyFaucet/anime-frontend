@@ -5,10 +5,11 @@ import naruto from "../src/assets/naruto.png";
 
 // Import CSS swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { EffectCards  } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import 'swiper/css/effect-cards';
 
 //import react slick
 import "slick-carousel/slick/slick.css";
@@ -19,13 +20,15 @@ function App() {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 3000,
     cssEase: "linear",
     pauseOnHover: true,
+    arrows: false,
+    swipeToSlide: true
   };
 
   return (
@@ -36,6 +39,7 @@ function App() {
             <img src={logo} alt="logo" className=" w-8 h-8 self-center mr-1" />
             <input
               type="text"
+              autocorrect="off"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-3/4 self-center"
               placeholder="Search..."
             />
@@ -63,57 +67,38 @@ function App() {
 
       <div id="highRate" className="mt-5 z-5">
         <Swiper
-          modules={[Navigation]}
-          navigation
+          modules={[EffectCards]}
+          effect="cards"
+          grabCursor={true}
           spaceBetween={50}
           slidesPerView={1}
-          style={{ "--swiper-navigation-size": "16px" }}
-          onSlideChange={() => console.log("slide changed")}
-          onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
-            <img src={naruto} alt="" />
+            <img src={naruto} alt="" className=""/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src={naruto} alt="" />
+            <img src={naruto} alt="" className=""/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src={naruto} alt="" />
+            <img src={naruto} alt="" className=""/>
           </SwiperSlide>
           {/* Tambah slide lainnya */}
         </Swiper>
       </div>
 
-      <div id="rekomendasiDariAdmin" className="relative slider-container mt-6 p-6.5 z-5 py-9 bg-[#1c1d1f]">
-        <hr className="absolute top-6 left-0 w-full h-px bg-[#ffffff] z-10 border-0" />
-        <h3 className="absolute z-10 top-1 left-4 text-xs text-white font-thin font-mono font-stretch-semi-expanded">Rekomendasi Dari Atmin😤🥵</h3>
-        <Slider {...settings} className="z-5">
-          <div>
-            <img src={naruto} alt="" />
+      <div id="rekomendasiDariAdmin" className="relative slider-container mt-6 px-6.5 z-5 pt-9 bg-[#1c1d1f]">
+        <h3 className="absolute z-10 top-1 left-4 text-base text-white font-thin font-mono font-stretch-semi-expanded">REKOMENDASI</h3>
+        <hr className="absolute top-8 left-0 w-full h-px bg-[#ffffff] z-10 border-0" />
+        <Slider {...settings} className="z-5 mt-3">
+          <div className="w-1/2">
+            <img src={naruto} alt="" className="aspect-[9/16] object-cover p-1"/>
+            <p>bagaimana cara  menggunakan</p>
           </div>
-          <div>
-            <img src={naruto} alt="" />
+          <div className="w-1/2">
+            <img src={naruto} alt="" className="aspect-[9/16] object-cover p-1"/>
           </div>
-          <div>
-            <img src={naruto} alt="" />
-          </div>
-          <div>
-            <img src={naruto} alt="" />
-          </div>
-          <div>
-            <img src={naruto} alt="" />
-          </div>
-          <div>
-            <img src={naruto} alt="" />
-          </div>
-          <div>
-            <img src={naruto} alt="" />
-          </div>
-          <div>
-            <img src={naruto} alt="" />
-          </div>
-          <div>
-            <img src={naruto} alt="" />
+          <div className="w-1/2">
+            <img src={naruto} alt="" className="aspect-[9/16] object-cover p-1"/>
           </div>
         </Slider>
       </div>
